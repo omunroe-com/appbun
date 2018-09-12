@@ -1,0 +1,18 @@
+java_binary_host {
+    name: "bundletool",
+
+    wrapper: "etc/bundletool",
+    srcs: ["java/**/*.java"],
+
+    static_libs: [
+        "guava",
+        "jsr305",
+        "dagger2-auto-value",
+        "error_prone_annotations-2.0.18",
+    ],
+
+    annotation_processors: ["dagger2-auto-value"],
+    annotation_processor_classes: ["com.google.auto.value.processor.AutoValueProcessor"],
+
+    manifest: "manifest.txt",
+}
